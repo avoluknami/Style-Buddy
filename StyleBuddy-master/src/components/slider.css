@@ -1,0 +1,35 @@
+/* Контейнер ограничивает видимую область */
+.slider-container {
+    width: 100%;
+    height: 600px; /* Задайте нужную высоту слайдера */
+    overflow: hidden; /* Скрываем картинки, которые выходят за рамки */
+    position: relative;
+  }
+  
+  /* Обертка, которая двигается */
+  .slider-wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column; /* Вертикальный слайдер, так как у вас translateY */
+    
+    /* --- ЭТО ГЛАВНАЯ СТРОКА ДЛЯ ПЛАВНОСТИ --- */
+    transition: transform 1.5s ease-in-out; 
+    /* 1.5s - время анимации перехода */
+    /* ease-in-out - плавное начало и конец движения */
+  }
+  
+  /* Блок одного слайда */
+  .slide {
+    width: 100%;
+    height: 100%;
+    flex-shrink: 0; /* Чтобы слайды не сжимались */
+  }
+  
+  /* Сама картинка */
+  .slide-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Чтобы картинка заполняла блок красиво */
+  }
+  
